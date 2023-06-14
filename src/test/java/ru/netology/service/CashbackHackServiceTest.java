@@ -1,31 +1,31 @@
 package ru.netology.service;
 
 
-import org.testng.annotations.Test;
+import org.junit.Test;
 
-import static org.testng.Assert.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 public class CashbackHackServiceTest {
 
-    @Test
+ @Test
     public void needToBuyMinLimit() {
         CashbackHackService service = new CashbackHackService();
 
-        assertEquals(service.remain(999), 1);
+        assertEquals(1, service.remain(999));
 
     }
     @Test
     public void needToBuyMaxLimit() {
         CashbackHackService service = new CashbackHackService();
 
-        assertEquals(service.remain(1001), 999);
+        assertEquals(999, service.remain(1001));
 
     }
     @Test
     public void needToBuyNullLimit() {
         CashbackHackService service = new CashbackHackService();
 
-        assertEquals(service.remain(1000), 0);
+        assertEquals(0, service.remain(1000));
 
     }
 }
